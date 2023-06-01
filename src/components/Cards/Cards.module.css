@@ -1,0 +1,21 @@
+
+
+.cardsWrapper {
+    background: url('../../images/deep-space.png') repeat-y;
+    width: 98vw;
+    margin: auto;
+    background-color: aqua;
+}
+
+.cardsContainer {
+
+    height: auto;
+    max-width: 1000px;
+    min-width: 350px; 
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0px auto 0px auto;
+    
+}

@@ -1,0 +1,59 @@
+
+.searchbar {
+    display: flex;
+    width: 70%;
+    height: 400px;
+    background: url('../../images/rickandmorty.jpg');
+    background-size: cover;
+    margin-top: 50px;
+    position: relative;
+    border-radius: 50px;
+}
+
+
+.barWrapper {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    margin-top: 260px;
+    /* From https://css.glass */
+    background:  rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.568);
+    backdrop-filter: blur(1.9px);
+    -webkit-backdrop-filter: blur(1.9px);
+}
+
+.bar {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    padding: 40px;
+}
+
+.inputSearch {
+    height: 40px;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+
+.searchButton:hover {
+    background-color: tomato;
+    cursor: pointer;
+    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
+}
+
+.randomButton {
+    margin-left: 20px;
+}
+
+.randomButton:hover {
+    background-color: tomato;
+    cursor: pointer;
+    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
+}
+
+

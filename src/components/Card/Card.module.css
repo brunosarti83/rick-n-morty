@@ -1,0 +1,166 @@
+
+.cardDiv {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-width: 300px;
+    height: 410px;
+    min-height: 410px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 30px 0 rgba(255, 12, 12, 0.356);
+    margin: 20px 10px 10px 20px;
+    position: relative;
+    z-index: 0;
+
+}
+
+.clsBtn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+.clsBtn:hover {
+    background-color: rgba(255, 0, 0, 0.699);
+    border-color: red;
+    box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.5), -2px 2px 2px 3px rgba(253, 1, 1, 0.521);
+    cursor: pointer;
+}
+
+.buttonFav {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0 0 0 2px;
+}
+
+.buttonFav:hover {
+    cursor: pointer;
+}
+
+.photo {
+    height: auto;
+    width: 100%;
+    
+}
+
+
+.description {
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: flex-end;
+    width: 100%;
+
+    font-family: 'Tahoma';
+    font-size: 9px;
+    font-style: italic;
+    text-align-last: right;
+    line-height: 0.8;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 0;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.characterName {
+    align-self: flex-start;
+    font-size: 24px;
+    font-family: 'Tahoma';
+    font-style: italic;
+    background-color: rgb(61, 61, 180);
+    color: white;
+    margin-bottom: 0;
+    padding: 7px 30px 7px 20px; 
+    border-top-right-radius: 90px;
+}
+
+.status {
+    background-color: rgb(136, 84, 185);
+    color: white;
+    width: 75%;
+    padding: 5px 20px;
+    margin: 0 0 0 0;
+    border-bottom-left-radius: 90px;
+    
+}
+
+.species {
+    background-color: rgb(219, 83, 41);
+    color: white;
+    width: 70%;
+    padding: 5px 20px;
+    margin: 0 0 0 0;
+    border-bottom-left-radius: 90px;
+}
+
+.gender {
+    background-color: rgb(241, 214, 60);
+    color: white;
+    width: 65%;
+    padding: 5px 20px;
+    margin: 0 0 0 0;
+    border-bottom-left-radius: 90px;
+}
+
+.origin {
+    background-color: rgb(109, 206, 100);
+    color: white;
+    height: 25px;
+    width: 60%;
+    padding: 5px 20px;
+    margin: 0 0 0 0;
+    border-bottom-left-radius: 90px;
+}
+
+.rocket {
+    height: 60px;
+    width: auto;
+
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+
+    /* display: none; */
+}
+
+.world {
+    height: 70px;
+    width: 70px;
+    background: rgb(36,162,48);
+    background: linear-gradient(53deg, rgba(36,162,48,1) 0%, rgba(69,162,59,1) 35%, rgba(0,250,4,1) 79%);
+   
+    border-radius: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: 0 0 0 15px;
+    /* display: none; */
+}
+
+.worldSmall {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(19, 221, 29, 0.856);
+   
+    border-radius: 10px;
+    position: absolute;
+    bottom: 55px;
+    left: 2px;
+    z-index: 1;
+    margin: 0 0 0 15px;
+    box-shadow: 3px 4px 4px 2px rgba(13,89,20,0.67);
+    -webkit-box-shadow: 3px 4px 4px 2px rgba(13,89,20,0.67);
+    -moz-box-shadow: 3px 4px 4px 2px rgba(13,89,20,0.67);
+    /* display: none; */
+}
+
+
+

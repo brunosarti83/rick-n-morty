@@ -1,0 +1,10 @@
+
+.container {
+    margin-top: 70px;
+    background-color: black;
+    min-height: 100dvh;
+}
+
+h1 {
+    color: white;
+}

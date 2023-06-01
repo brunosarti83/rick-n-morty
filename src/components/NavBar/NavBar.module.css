@@ -1,0 +1,82 @@
+
+.navDiv {
+    position: fixed;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    width: 100%;
+    height: 70px;
+    z-index: 10;
+    background-color: black;
+    margin: 0px;
+}
+
+.list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 0px 0px 30px;
+    height: 100%;
+    width: 40%;
+    justify-content: space-around;
+    align-content: center;
+    font-weight: bolder;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.activeLink {
+    text-decoration: none;
+    color: white;
+}
+
+.activeLink .marker {
+    padding: 12px 25px 12px;
+    background: linear-gradient(32deg, rgb(27, 204, 44) 24%, rgba(0,250,4,1) 63%);
+    border-radius: 25px;
+    margin: auto;
+}
+
+.pendingLink {
+    text-decoration: none;
+    color: white;
+}
+
+
+.liWrap {
+    display: flex;
+    height: 70px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.liWrap:hover {
+    background: linear-gradient(32deg, rgba(27, 204, 45, 0.322) 24%, rgba(0, 250, 4, 0.671) 63%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.userSection {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.user {
+    color:rgb(27, 204, 44);
+}
+
+.logout {
+    
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+

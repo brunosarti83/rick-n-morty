@@ -1,0 +1,12 @@
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../../images/deep-space.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: top;
+    margin-top: 80px;
+ }

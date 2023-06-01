@@ -1,0 +1,69 @@
+
+.holePage {
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(0deg, rgba(12, 15, 7, 0.541) -10%, khaki 60%);
+    display: flex;
+    flex-direction: column;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formWrapper {
+    margin: auto;
+    width: 40dvw;
+    height: 80dvh;
+    background: url('../../images/Random.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    filter: drop-shadow(0 0 0.75rem rgba(10, 8, 8, 0.795));
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35ch;
+    height: 60dvh;
+    margin: auto;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: tomato;
+    font-weight: 700;
+    font-style: italic;
+}
+
+form button:hover {
+    background-color: tomato;
+    cursor: pointer;
+    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
+}
+
+form label {
+    font-style: italic;
+    font-weight: 700;
+}
+
+form input {
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+
+.errors {
+    color: red;
+    font-style: italic;
+}
