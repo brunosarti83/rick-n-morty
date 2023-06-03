@@ -28,8 +28,8 @@ function App() {
       !access && navigate(ROUTES.landing)
    }, [access])
 
-   let EMAIL = 'rick@morty.com'
-   let PASSWORD = 'asd123'
+   let EMAIL = '' //'rick@morty.com'
+   let PASSWORD = '' //'asd123'
 
    const login = (userData) => {
       if (userData.email === EMAIL && userData.password === PASSWORD) {
