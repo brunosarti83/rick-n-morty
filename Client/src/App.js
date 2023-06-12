@@ -14,6 +14,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { setUser } from './redux/actions'
 import { useDispatch } from 'react-redux';
+import source from './helpers/source';
 
 
 function App() {
@@ -48,7 +49,9 @@ function App() {
       if (characters.every(character=>{
          return character.id != id;
       })) {
-         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         // url api: `https://rickandmortyapi.com/api/character/${id}`
+         axios((source === 'server') ? `http://localhost:3001/rickandmorty/character/${id}`
+         : `https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
             } else {

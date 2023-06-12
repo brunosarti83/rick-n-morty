@@ -2,6 +2,7 @@ import styles from './Detail.module.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import source from '../../helpers/source';
 
 export default function Detail () {
 
@@ -9,7 +10,9 @@ export default function Detail () {
     const [ character, setCharacter ] = useState({})
 
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+        // url api: `https://rickandmortyapi.com/api/character/${id}`
+        axios((source === 'server') ? `http://localhost:3001/rickandmorty/character/${id}`
+        : `https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
            if (data.name) {
               setCharacter(data);
            } else {
