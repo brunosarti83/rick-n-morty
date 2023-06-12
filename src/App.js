@@ -28,8 +28,8 @@ function App() {
       !access && navigate(ROUTES.landing)
    }, [access])
 
-   let EMAIL = '' //'rick@morty.com'
-   let PASSWORD = '' //'asd123'
+   let EMAIL = 'rick@morty.com'
+   let PASSWORD = 'asd123'
 
    const login = (userData) => {
       if (userData.email === EMAIL && userData.password === PASSWORD) {
@@ -37,6 +37,11 @@ function App() {
          dispatch(setUser(userData.email))
          navigate(ROUTES.home)
       }
+   }
+
+   const guest = () => {
+      dispatch(setUser('Guest'))
+      navigate(ROUTES.home)
    }
 
    const onSearch = (id) => {
@@ -59,14 +64,18 @@ function App() {
       }))
    }
 
+   const clearAll = () => {
+      setCharacters([])
+   }
+
    
 
    return (
       <div className='App'>
          { (pathname !== ROUTES.landing) && <NavBar/> }
          <Routes>
-            <Route path={ROUTES.landing} element={<Landing login={login}/>}></Route>
-            <Route path={ROUTES.home} element={<Home characters={characters} onSearch={onSearch} onClose={onClose}/>}></Route>
+            <Route path={ROUTES.landing} element={<Landing login={login} guest={guest}/>}></Route>
+            <Route path={ROUTES.home} element={<Home characters={characters} onSearch={onSearch} onClose={onClose} clearAll={clearAll}/>}></Route>
             <Route path={ROUTES.about} element={<About />}></Route>
             <Route path={ROUTES.detail + ':id'} element={<Details />}></Route>
             <Route path={ROUTES.favorites} element={<Favorites />}></Route>

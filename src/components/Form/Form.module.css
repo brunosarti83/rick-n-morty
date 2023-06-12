@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: space-around;
     filter: drop-shadow(0 0 0.75rem rgba(10, 8, 8, 0.795));
+    position: relative;
 }
 
 form {
@@ -66,4 +67,23 @@ form input {
 .errors {
     color: red;
     font-style: italic;
+}
+
+.guests {
+    width: 150px;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: rgb(73, 189, 235);
+    font-weight: 700;
+    font-style: italic;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.guests:hover {
+    cursor: pointer;
+    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
 }

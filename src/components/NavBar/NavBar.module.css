@@ -67,7 +67,8 @@
 }
 
 .user {
-    color:rgb(27, 204, 44);
+    color:greenyellow;
+    font-family: Tahoma;
 }
 
 .logout {

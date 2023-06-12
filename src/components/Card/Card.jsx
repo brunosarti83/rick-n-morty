@@ -33,7 +33,7 @@ export default function Card(props) {
          dispatch(removeFav(id))
       } else {
          setIsFav(true)
-         dispatch(addFav(props))
+         dispatch(addFav({...props, origin : {name : origin}}))
       }
    }
 

@@ -2,6 +2,8 @@
 export const ADD_FAV = 'ADD_FAV'
 export const REMOVE_FAV = 'REMOVE_FAV'
 export const SET_USER = 'SET_USER'
+export const FILTER = 'FILTER'
+export const ORDER = 'ORDER'
 
 export const addFav = (character) => {
     return {
@@ -21,5 +23,19 @@ export const setUser = (user) => {
     return {
         type : SET_USER,
         payload : user
+    }
+}
+
+export const filterCards = (gender) => {
+    return {
+        type : FILTER,
+        payload : gender
+    }
+}
+
+export const orderCards = (orden) => {
+    return {
+        type : ORDER,
+        payload : orden
     }
 }

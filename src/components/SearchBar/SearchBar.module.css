@@ -56,4 +56,15 @@
     box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
 }
 
+.clearAll {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: greenyellow;
+}
+
+.clearAll:hover {
+    cursor: pointer;
+}
 

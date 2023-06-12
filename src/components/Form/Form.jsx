@@ -2,12 +2,14 @@
 import styles from './Form.module.css';
 // hooks y helpers
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { validator } from '../../helpers/validation';
 
 
 export default function Form(props) {
 
-    const { login } = props
+    const { login, guest } = props
+    const navigate = useNavigate()
 
     const [userData, setUserData] = useState({
         email: '',
@@ -31,6 +33,10 @@ export default function Form(props) {
         login(userData)
     }
 
+    const handleGuest = () => {
+        guest()
+    }
+
     return (
         <div className={styles.holePage}>
             <div className={styles.formWrapper}>
@@ -47,6 +53,7 @@ export default function Form(props) {
                     </div>
                     <button type='submit'>Submit</button>
                 </form>
+                    <button className={styles.guests} onClick={handleGuest}>or try it for FREE</button>
             </div>
         </div>
     )
