@@ -1,10 +1,81 @@
 
+
 .container {
+    box-sizing: border-box;
     margin-top: 70px;
     background-color: black;
-    min-height: 100dvh;
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     color: white;
+    margin: 10px auto;
+}
+
+.grid {
+    display: flex;
+}
+
+.image {
+    background: url('../../images/perfil.jpg') no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 600px;
+    border-bottom-right-radius: 20%px;
+    transform: skewX(-10deg);
+    position: absolute;
+    right: -145px;
+    top: 0px;
+    background-color: red;
+}
+
+.imgDiv {
+    margin-left: auto;
+    margin-right: 250px;
+    height: 500px;
+    width: 200px;
+    background-color: rgba(255,255,255,0.7);
+    transform: skewX(10deg);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.dataColumn {
+    background-color: rgba(17, 19, 18, 0.80);
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: -250px;
+    transform: skewX(10deg);
+    border-radius: 10px;
+}
+
+.grid::before {
+    content: '';
+    height: 500px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: -400px;
+    border-radius: 10px;
+    border-left: 2px solid white;
+    position: relative;
+}
+
+.grid::after {
+    content: '';
+    background-image: url('../../images/HenryLogoYellow.jpg');
+    background-size: contain;
+    height: 10dvh;
+    width: 10dvw;
+    position: absolute;
+    bottom: 7%;
+    left: 22%;
+    border-radius: 50px;
+    box-shadow: 2px 3px white;
 }

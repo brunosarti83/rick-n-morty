@@ -12,7 +12,9 @@ export default function About() {
             <h1>Soy Bruno 🖐</h1>
             <div className={styles.grid}>
                 <div className={styles.dataColumn}></div>
-                <div className={styles.imageSide}></div>
+                <div className={styles.imgDiv}>
+                    <div className={styles.image}></div>
+                </div>
             </div>
         </div>
     )
