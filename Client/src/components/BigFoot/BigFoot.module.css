@@ -1,7 +1,11 @@
-
+.footContainer {
+    background-color: black;
+    position: relative;
+}
 
 .image {
     width: 100%;
     height: auto;
+    vertical-align: bottom;
 }
 

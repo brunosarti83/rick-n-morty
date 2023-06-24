@@ -14,7 +14,6 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { setUser } from './redux/actions'
 import { useDispatch } from 'react-redux';
-import source from './helpers/source';
 
 
 function App() {
@@ -29,15 +28,16 @@ function App() {
       !access && navigate(ROUTES.landing)
    }, [access])
 
-   let EMAIL = 'rick@morty.com'
-   let PASSWORD = 'asd123'
-
    const login = (userData) => {
-      if (userData.email === EMAIL && userData.password === PASSWORD) {
-         setAccess(true)
-         dispatch(setUser(userData.email))
-         navigate(ROUTES.home)
-      }
+      const { email, password } = userData
+      const URL = 'http://localhost:3001/rickandmorty/login/'
+      axios(URL + `?email=${email}&password=${password}`)
+      .then(({data}) => {
+         const { access, user } = data
+         dispatch(setUser(user.email))
+         setAccess(access)
+         access && navigate(ROUTES.home)
+      })
    }
 
    const guest = () => {
@@ -49,9 +49,8 @@ function App() {
       if (characters.every(character=>{
          return character.id != id;
       })) {
-         // url api: `https://rickandmortyapi.com/api/character/${id}`
-         axios((source === 'server') ? `http://localhost:3001/rickandmorty/character/${id}`
-         : `https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         axios(`http://localhost:3001/rickandmorty/character/${id}`)
+         .then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
             } else {

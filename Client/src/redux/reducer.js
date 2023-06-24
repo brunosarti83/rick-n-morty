@@ -10,13 +10,12 @@ const rootReducer = (state=initialState, action) => {
     switch (action.type) {
         case ADD_FAV:
             return {...state, 
-                myFavorites : [...state.myFavorites, action.payload], 
-                allCharacters : [...state.myFavorites, action.payload]
+                myFavorites : action.payload, 
+                allCharacters : action.payload
             }
         case REMOVE_FAV:
-            const netFavs = state.myFavorites.filter(favs => {return favs.id !== Number(action.payload)})
             return {...state, 
-                myFavorites : netFavs,
+                myFavorites : action.payload
             }
         case SET_USER:
             return {...state, 
