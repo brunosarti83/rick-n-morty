@@ -5,7 +5,6 @@ export const ADD_FAV = 'ADD_FAV'
 export const REMOVE_FAV = 'REMOVE_FAV'
 export const SET_USER = 'SET_USER'
 export const FILTER = 'FILTER'
-export const ORDER = 'ORDER'
 
 export const addFav = (character) => {
     const endpoint = 'http://localhost:3001/rickandmorty/fav'
@@ -40,16 +39,10 @@ export const setUser = (user) => {
     }
 }
 
-export const filterCards = (gender) => {
+export const filterCards = (filterObj) => {
     return {
         type : FILTER,
-        payload : gender
+        payload : filterObj
     }
 }
 
-export const orderCards = (orden) => {
-    return {
-        type : ORDER,
-        payload : orden
-    }
-}

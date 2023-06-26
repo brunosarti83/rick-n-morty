@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, SET_USER, FILTER, ORDER } from './actions';
+import { ADD_FAV, REMOVE_FAV, SET_USER, FILTER } from './actions';
 
 const initialState = {
     user : '',
@@ -15,37 +15,37 @@ const rootReducer = (state=initialState, action) => {
             }
         case REMOVE_FAV:
             return {...state, 
-                myFavorites : action.payload
+                myFavorites : action.payload,
+                allCharacters : action.payload
             }
         case SET_USER:
             return {...state, 
                 user : action.payload
             }
         case FILTER:
-            const filteredFavs = [...state.allCharacters].filter((char) => {return char.gender === action.payload})
-            if (action.payload === 'All') {
-                return {...state, 
-                    myFavorites : state.allCharacters,
-                }
-            } else {
-                return {...state,
-                    myFavorites : filteredFavs,
+            const filterObj = action.payload
+            let filteredFavs = [...state.allCharacters]
+            for (const prop in filterObj) {
+                if (prop !== 'order' && filterObj[prop] !== 'All') {
+                    filteredFavs = filteredFavs.filter(fav => fav[prop] === filterObj[prop])
                 }
             }
-        case ORDER:
-            const orderedFavs = [...state.allCharacters].sort((a, b) => {
-                switch (action.payload) {
-                    case 'A':
-                        return (a.id - b.id)
-                    case 'D':
-                        return (b.id - a.id)
-                    default:
-                        return (state.allCharacters)
-                }
-            })
+            if (filterObj.order !== 'Added') {
+                filteredFavs.sort((a, b) => {
+                    switch (filterObj.order) {
+                        case 'A':
+                            return (a.id - b.id)
+                        case 'D':
+                            return (b.id - a.id)
+                        default:
+                            return ([...filteredFavs])
+                    }
+                })
+            }
             return {...state,
-                myFavorites : orderedFavs,
+                myFavorites: filteredFavs
             }
+
         default:
             return {...state}
     }
