@@ -28,16 +28,19 @@ function App() {
       !access && navigate(ROUTES.landing)
    }, [access])
 
-   const login = (userData) => {
+   const login = async (userData) => {
       const { email, password } = userData
       const URL = 'http://localhost:3001/rickandmorty/login/'
-      axios(URL + `?email=${email}&password=${password}`)
-      .then(({data}) => {
+      try {
+         const { data } = await axios(URL + `?email=${email}&password=${password}`)
          const { access, user } = data
          dispatch(setUser(user.email))
          setAccess(access)
          access && navigate(ROUTES.home)
-      })
+
+      } catch (err) {
+         window.alert(err.message);
+      }
    }
 
    const guest = () => {
@@ -45,18 +48,18 @@ function App() {
       navigate(ROUTES.home)
    }
 
-   const onSearch = (id) => {
+   const onSearch = async (id) => {
       if (characters.every(character=>{
          return character.id != id;
       })) {
-         axios(`http://localhost:3001/rickandmorty/character/${id}`)
-         .then(({ data }) => {
-            if (data.name) {
-               setCharacters((oldChars) => [...oldChars, data]);
-            } else {
-               window.alert('¡No hay personajes con este ID!');
-            }
-         });
+         try {
+            const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+            data.name && setCharacters((oldChars) => [...oldChars, data]);
+         } catch (err) {
+            window.alert(`There is no character with this ID! ID:${id}`);
+         }
+      } else {
+         window.alert(`The character with this ID is already on screen! ID:${id}`);
       }
    }
 
