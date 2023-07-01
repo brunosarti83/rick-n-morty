@@ -16,8 +16,8 @@ export default function Card(props) {
    // hooks
    const [isFav, setIsFav] = useState(false)
    const dispatch = useDispatch()
-   const myFavorites = useSelector((state) => state.myFavorites)
    const location = useLocation()
+   const myFavorites = useSelector((state) => (location.pathname === ROUTES.favorites) ? state.myFavorites : state.allCharacters)
 
    useEffect(() => {
       myFavorites.forEach((fav) => {

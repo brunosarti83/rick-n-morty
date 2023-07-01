@@ -13,7 +13,6 @@ export default function Favorites(props) {
 
     const myFavorites = useSelector((state) => state.myFavorites)
     const dispatch = useDispatch()
-    const [aux, setAux] = useState(false)
     const [genders, setGenders] = useState([])
     const [statuses, setStatuses] = useState([])
     const [specieses, setSpecieses] = useState([])
@@ -48,10 +47,7 @@ export default function Favorites(props) {
         dispatch(actions.filterCards(filterObj))
     },[filterObj])
 
-    // const handleOrder = (event) => {
-    //     dispatch(actions.orderCards(event.target.value))
-    //     setAux(!aux)
-    // }
+   
     const handleFilter = (event) => {
         const field = event.target.name
         const value = event.target.value
