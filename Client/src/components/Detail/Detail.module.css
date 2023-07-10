@@ -3,8 +3,9 @@
     padding-top: 70px;
     width: 100%;
     background-color: black;
-    min-height: 90vh;
+    min-height: 90dvh;
     display: flex;
+    align-items: center;
 }
 
 .bigContainer {
@@ -20,7 +21,7 @@
     background-color: black;
     color: white;
     min-width: 70%;
-    height: 550px;
+    min-height: 80dvh;
     align-items: center;
     justify-items: center;
     text-align: center;
@@ -73,4 +74,20 @@
     background: linear-gradient(32deg, rgb(27, 204, 44) 24%, rgba(0,250,4,1) 63%);
     border: none;
     padding: 10px 20px;
+}
+
+@media (max-width: 650px) {
+    .bigContainer {
+        grid-template-columns: auto;
+        grid-row-gap: min(1rem, 5px);
+        grid-template-areas:
+        'name'
+        'photo'
+        'status'
+        'species'
+        'gender'
+        'origin'
+        'action';
+        padding-bottom: 2rem;
+    }
 }

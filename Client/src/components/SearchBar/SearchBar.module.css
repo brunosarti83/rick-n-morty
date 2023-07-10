@@ -1,10 +1,12 @@
 
 .searchbar {
     display: flex;
-    width: 70%;
+    width: 90dvw;
+    max-width: 780px;
     height: 400px;
     background: url('../../images/rickandmorty.jpg');
     background-size: cover;
+    background-position: 30% center;
     margin-top: 50px;
     position: relative;
     border-radius: 50px;
@@ -14,7 +16,8 @@
 .barWrapper {
     display: flex;
     margin: auto;
-    width: 70%;
+    width: 80%;
+    max-width: 525px;
     margin-top: 260px;
     /* From https://css.glass */
     background:  rgba(255, 255, 255, 0.10);

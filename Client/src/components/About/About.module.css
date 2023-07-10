@@ -4,10 +4,11 @@
     box-sizing: border-box;
     margin-top: 70px;
     background-color: black;
-    height: 100dvh;
+    height: calc(100dvh - 70px);
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 h1 {
@@ -29,12 +30,11 @@ h1 {
     position: absolute;
     right: -145px;
     top: 0px;
-    background-color: red;
 }
 
 .imgDiv {
     margin-left: auto;
-    margin-right: 250px;
+    margin-right: 20dvw;
     height: 500px;
     width: 200px;
     background-color: rgba(255,255,255,0.7);
@@ -44,24 +44,31 @@ h1 {
     position: relative;
 }
 
+.text {
+    transform: skewX(-10deg);
+    color: white;
+}
 
 
 .dataColumn {
     background-color: rgba(17, 19, 18, 0.80);
     height: 500px;
-    width: 500px;
+    width: 30dvw;
     margin-left: auto;
     margin-right: -250px;
     transform: skewX(10deg);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .grid::before {
     content: '';
     height: 500px;
-    width: 200px;
+    width: 30dvw;
     margin-left: auto;
-    margin-right: -400px;
+    margin-right: -40dvw;
     border-radius: 10px;
     border-left: 2px solid white;
     position: relative;
@@ -70,12 +77,13 @@ h1 {
 .grid::after {
     content: '';
     background-image: url('../../images/HenryLogoYellow.jpg');
-    background-size: contain;
-    height: 10dvh;
-    width: 10dvw;
+    background-size: cover;
+    background-position: center;
+    height: 50px;
+    width: 100px;
     position: absolute;
-    bottom: 7%;
-    left: 22%;
-    border-radius: 50px;
+    bottom: 8dvh;
+    left: 23dvw;
+    border-radius: 10vw;
     box-shadow: 2px 3px white;
 }

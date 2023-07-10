@@ -12,7 +12,6 @@
 .formWrapper {
     margin: auto;
     width: 90dvw;
-    background-position: 30% center;
     max-width: 600px;
     height: 80dvh;
     background: url('../../images/Random.jpg');
@@ -30,6 +29,7 @@ form {
     flex-direction: column;
     justify-content: space-around;
     width: 35ch;
+    max-width: 85dvw;
     height: 60dvh;
     margin: auto;
 }
@@ -91,9 +91,14 @@ form input {
     box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
 }
 
-@media (max-width : 600px) {
+@media (orientation: portrait) {
     .formWrapper {
-        /* width: 90dvw; */
         background-position: 30% center;
+    }
+}
+
+@media (max-height: 400px) {
+    .guests {
+        bottom: 1px;
     }
 }

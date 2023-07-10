@@ -14,7 +14,7 @@
     display: grid;
     width: 100%;
     background: rgba(0,0,0,0.3);
-    
+    column-gap: 5px;
     grid-template-columns: repeat(12, 1fr);
     row-gap: 0.25em;
     padding: 10px 0 10px 0;

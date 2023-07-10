@@ -15,7 +15,9 @@
     
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     margin: 0px auto 0px auto;
     
 }
+
