@@ -76,7 +76,7 @@
     padding: 10px 20px;
 }
 
-@media (max-width: 650px) {
+@media screen and (max-width: 650px) {
     .bigContainer {
         grid-template-columns: auto;
         grid-row-gap: min(1rem, 5px);

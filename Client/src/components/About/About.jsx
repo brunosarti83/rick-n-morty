@@ -15,9 +15,9 @@ export default function About() {
                     < div className={styles.text}>
                         <h2><ion-icon name="logo-github"></ion-icon> /brunosarti83</h2>
                         <div className={styles.linkedin}>
-                            <p>Estudiante en Henry <ion-icon name="school"></ion-icon> FullStack Developer<br></br>
-                            Javascript / React / HTML / CSS / Express / PostgreSQL<br></br>
-                            
+                            <p>Student @Henry <ion-icon name="school"></ion-icon> FullStack Developer<br></br>
+                            <ion-icon name="logo-javascript"></ion-icon> Javascript  <ion-icon name="logo-react"></ion-icon> React   <ion-icon name="logo-html5"></ion-icon> HTML   <ion-icon name="logo-css3"></ion-icon> CSS <br /> <ion-icon name="server-outline"></ion-icon> Express  <ion-icon name="cube-outline"></ion-icon> PostgreSQL<br></br>
+                            others :  <ion-icon name="logo-python"></ion-icon> Python  <ion-icon name="paw-outline"></ion-icon> Pandas 
                             </p>  
                             <h2><ion-icon name="logo-linkedin"></ion-icon> /brunosarti83</h2>
                         </div>
