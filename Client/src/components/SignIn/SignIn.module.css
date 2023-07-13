@@ -2,26 +2,53 @@
 .holePage {
     min-height: 100dvh;
     width: 100dvw;
-    background: linear-gradient(0deg, rgba(12, 15, 7, 0.541) -10%, khaki 60%);
+    /* background: linear-gradient(0deg, rgba(12, 15, 7, 0.541) -10%, khaki 60%); */
+    background: url('../../images/space-signin.jpg');
     
     display: flex;
     flex-direction: column;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .formWrapper {
     margin: auto;
     width: 90dvw;
-    max-width: 600px;
-    height: 80dvh;
-    background: url('../../images/Random.jpg');
-    background-size: cover;
-    border-radius: 10px;
+    max-width: 400px;
+    height: 85dvh;
+
+    /* From https://css.glass */
+    background:  rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 25px rgba(231, 227, 227, 0.568);
+    backdrop-filter: blur(1.9px);
+    -webkit-backdrop-filter: blur(1.9px);
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     filter: drop-shadow(0 0 0.75rem rgba(10, 8, 8, 0.795));
     position: relative;
+}
+
+.formWrapper::before {
+    content: '';
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    height: 70dvh;
+    background: url('../../images/rick-under-water.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 5%;
+    border-radius: 16px;
+    box-shadow: 5px 5px 25px rgba(231, 227, 227, 0.568);
+    backdrop-filter: blur(1.9px);
+    border: 1px solid tomato;
 }
 
 form {
@@ -45,23 +72,22 @@ form button {
     margin-right: auto;
     padding: 10px;
     border-radius: 5px;
-    background-color: tomato;
     font-weight: 700;
     font-style: italic;
 }
 
 form button:hover {
-    background-color: tomato;
     cursor: pointer;
     box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
 }
 
-form label {
+.formLabel {
     font-style: italic;
-    font-weight: 700;
+    font-weight: 500;
+    color: whitesmoke;
 }
 
-form input {
+.formInput {
     height: 20px;
     border-radius: 4px;
     border: 2px solid black;
@@ -72,46 +98,16 @@ form input {
     font-style: italic;
 }
 
-.buttonsDiv {
-    display: flex;
-    flex-direction: row;
+
+.haveAcc {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: Tahoma;
+    padding-bottom: 5dvh;
+    position: relative;
+    top: 2%;
 }
 
-.signIn {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: tomato;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.signIn:hover {
-    background-color: tomato;
-    cursor: pointer;
-    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
-}
-
-.guests {
-    width: 150px;
-    padding: 12px;
-    border-radius: 5px;
-    background-color: rgb(73, 189, 235);
-    font-weight: 700;
-    font-style: italic;
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-.guests:hover {
-    cursor: pointer;
-    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
-}
 
 @media (orientation: portrait) {
     .formWrapper {
@@ -119,8 +115,3 @@ form input {
     }
 }
 
-@media (max-height: 400px) {
-    .guests {
-        bottom: 1px;
-    }
-}

@@ -6,7 +6,9 @@ const postFav = async (req, res) => {
         res.status(401).send('Faltan datos')
     } else {
         try {
-            const result = await Favorite.findOrCreate({where: { id, name, origin, status, image, species, gender }})
+            const result = await Favorite.findOrCreate({where: { id },
+                defaults: { name, origin, status, image, species, gender }
+            })
             const [newFav, created] = result  
             await newFav.addUser(userId)
             const user = await User.findByPk(userId, {

@@ -5,4 +5,5 @@ export const ROUTES = {
     about : '/about',
     detail : '/detail/',
     favorites : '/favorites',
+    signin : '/signin',
 }

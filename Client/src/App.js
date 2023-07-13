@@ -7,6 +7,7 @@ import Home from './Views/Home/Home';
 import About from './components/About/About';
 import Details from './Views/Details/Details';
 import Favorites from './components/Favorites/Favorites';
+import SignIn from './components/SignIn/SignIn';
 // helpers, hooks y librerias
 import axios from 'axios';
 import { ROUTES } from './helpers/ROUTES';
@@ -28,6 +29,16 @@ function App() {
       !access && navigate(ROUTES.landing)
    }, [access])
 
+   const signIn = async (userData) => {
+      const URL = 'http://localhost:3001/rickandmorty/login/'
+      try {
+         const { data } = await axios.post(URL,userData)
+         login(userData)
+      } catch (err) {
+         window.alert(err.message);
+      }
+   }
+
    const login = async (userData) => {
       const { email, password } = userData
       const URL = 'http://localhost:3001/rickandmorty/login/'
@@ -45,7 +56,7 @@ function App() {
       }
    }
 
-   const guest = () => { // esto seguramente no va más
+   const guest = () => {
       dispatch(setUser('Guest'))
       navigate(ROUTES.home)
    }
@@ -79,9 +90,10 @@ function App() {
 
    return (
       <div className='App'>
-         { (pathname !== ROUTES.landing) && <NavBar/> }
+         { (pathname !== ROUTES.landing && pathname !== ROUTES.signin) && <NavBar/> }
          <Routes>
             <Route path={ROUTES.landing} element={<Landing login={login} guest={guest}/>}></Route>
+            <Route path={ROUTES.signin} element={<SignIn signIn={signIn}/>}></Route>
             <Route path={ROUTES.home} element={<Home characters={characters} onSearch={onSearch} onClose={onClose} clearAll={clearAll}/>}></Route>
             <Route path={ROUTES.about} element={<About />}></Route>
             <Route path={ROUTES.detail + ':id'} element={<Details />}></Route>

@@ -4,7 +4,7 @@ import styles from './Form.module.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validator } from '../../helpers/validation';
-
+import { ROUTES } from '../../helpers/ROUTES';
 
 export default function Form(props) {
 
@@ -33,8 +33,12 @@ export default function Form(props) {
         login(userData)
     }
 
-    const handleGuest = () => {
-        guest()
+    // const handleGuest = () => {
+    //     guest()
+    // }
+
+    const goToSignIn = () => {
+        navigate(ROUTES.signin)
     }
 
     return (
@@ -51,9 +55,12 @@ export default function Form(props) {
                         <input name='password' type='password' value={userData.password} onChange={handleChange} />
                         <span className={styles.errors}>{errors.password}</span>
                     </div>
-                    <button type='submit'>Submit</button>
+                    <div className={styles.buttonsDiv}>
+                        <button type='submit'>Log In</button>
+                        <button className={styles.signIn} onClick={goToSignIn}>Sign In</button>
+                    </div>
                 </form>
-                    <button className={styles.guests} onClick={handleGuest}>or try it for FREE</button>
+                    {/* <button className={styles.guests} onClick={handleGuest}>or try it for FREE</button> */}
             </div>
         </div>
     )
