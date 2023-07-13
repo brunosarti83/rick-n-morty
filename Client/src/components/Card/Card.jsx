@@ -18,10 +18,11 @@ export default function Card(props) {
    const dispatch = useDispatch()
    const location = useLocation()
    const myFavorites = useSelector((state) => (location.pathname === ROUTES.favorites) ? state.myFavorites : state.allCharacters)
+   const userId = useSelector((state) => state.user.id)
 
    useEffect(() => {
       myFavorites.forEach((fav) => {
-         if (fav.id === id) {
+         if (fav.id == id) {
             setIsFav(true)
          }
       })
@@ -30,10 +31,10 @@ export default function Card(props) {
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false)
-         dispatch(removeFav(id))
+         dispatch(removeFav(id,userId))
       } else {
          setIsFav(true)
-         dispatch(addFav({...props, origin : {name : origin}}))
+         dispatch(addFav({ id, name, status, species, gender, origin, image, onClose, userId }))
       }
    }
 

@@ -12,7 +12,7 @@ import axios from 'axios';
 import { ROUTES } from './helpers/ROUTES';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { setUser } from './redux/actions'
+import { setUser, getFavs } from './redux/actions'
 import { useDispatch } from 'react-redux';
 
 
@@ -34,7 +34,9 @@ function App() {
       try {
          const { data } = await axios(URL + `?email=${email}&password=${password}`)
          const { access, user } = data
-         dispatch(setUser(user.email))
+         dispatch(setUser(user))
+         dispatch(getFavs(user.id))
+         setCharacters([])
          setAccess(access)
          access && navigate(ROUTES.home)
 
@@ -43,7 +45,7 @@ function App() {
       }
    }
 
-   const guest = () => {
+   const guest = () => { // esto seguramente no va más
       dispatch(setUser('Guest'))
       navigate(ROUTES.home)
    }
