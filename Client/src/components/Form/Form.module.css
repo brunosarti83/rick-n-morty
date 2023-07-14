@@ -2,8 +2,11 @@
 .holePage {
     min-height: 100dvh;
     width: 100dvw;
-    background: linear-gradient(0deg, rgba(12, 15, 7, 0.541) -10%, khaki 60%);
-    
+    /* background: linear-gradient(0deg, rgba(12, 15, 7, 0.541) -10%, khaki 60%); */
+    background: url('../../images/deep-space.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
@@ -12,16 +15,41 @@
 .formWrapper {
     margin: auto;
     width: 90dvw;
-    max-width: 600px;
-    height: 80dvh;
-    background: url('../../images/Random.jpg');
-    background-size: cover;
-    border-radius: 10px;
+    max-width: 400px;
+    height: 85dvh;
+
+    /* From https://css.glass */
+    background:  rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 25px rgba(231, 227, 227, 0.568);
+    backdrop-filter: blur(1.9px);
+    -webkit-backdrop-filter: blur(1.9px);
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     filter: drop-shadow(0 0 0.75rem rgba(10, 8, 8, 0.795));
     position: relative;
+}
+
+.formWrapper::before {
+    content: '';
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    height: 70dvh;
+    background: url('../../images/crazy-rick.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 5%;
+    border-radius: 16px;
+    box-shadow: 5px 5px 25px rgba(231, 227, 227, 0.568);
+    backdrop-filter: blur(1.9px);
+    border: 1px solid white;
 }
 
 form {
@@ -39,26 +67,11 @@ form div {
     flex-direction: column;
 }
 
-form button {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: tomato;
-    font-weight: 700;
-    font-style: italic;
-}
-
-form button:hover {
-    background-color: tomato;
-    cursor: pointer;
-    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
-}
 
 form label {
     font-style: italic;
-    font-weight: 700;
+    font-weight: 500;
+    color: whitesmoke;
 }
 
 form input {
@@ -78,39 +91,44 @@ form input {
 }
 
 .signIn {
-    width: 100px;
+    width: 120px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: tomato;
+    padding: 12px;
+    border-radius: 0px;
+    border: none;
+    background-color: white;
     font-weight: 700;
     font-style: italic;
+    box-shadow: 2px 3px 0px 0px black;
+    transition: 0.2s;
 }
 
 .signIn:hover {
-    background-color: tomato;
     cursor: pointer;
-    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
+    background-color: black;
+    color: white;
 }
 
-.guests {
-    width: 150px;
+.logIn {
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 12px;
-    border-radius: 5px;
-    background-color: rgb(73, 189, 235);
+    border-radius: 0px;
+    border: none;
+    background: linear-gradient(32deg, rgb(27, 204, 44) 24%, rgba(0,250,4,1) 63%);
     font-weight: 700;
     font-style: italic;
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    margin: auto;
+    box-shadow: 2px 3px 0px 0px black;
+    transition: 0.2s;
 }
 
-.guests:hover {
+.logIn:hover {
     cursor: pointer;
-    box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
+    background: none;
+    background-color: black;
+    color: white;
 }
 
 @media (orientation: portrait) {

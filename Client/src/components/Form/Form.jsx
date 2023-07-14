@@ -33,9 +33,6 @@ export default function Form(props) {
         login(userData)
     }
 
-    // const handleGuest = () => {
-    //     guest()
-    // }
 
     const goToSignIn = () => {
         navigate(ROUTES.signin)
@@ -56,11 +53,10 @@ export default function Form(props) {
                         <span className={styles.errors}>{errors.password}</span>
                     </div>
                     <div className={styles.buttonsDiv}>
-                        <button type='submit'>Log In</button>
+                        <button className={styles.logIn}  type='submit'>Log In</button>
                         <button className={styles.signIn} onClick={goToSignIn}>Sign In</button>
                     </div>
                 </form>
-                    {/* <button className={styles.guests} onClick={handleGuest}>or try it for FREE</button> */}
             </div>
         </div>
     )

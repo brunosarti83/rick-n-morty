@@ -55,7 +55,7 @@ export default function SignIn(props) {
                         <input className={styles.formInput} name='confirm' type='password' value={userData.confirm} onChange={handleChange} />
                         <span className={styles.errors}>{errors.confirm}</span>
                     </div>
-                    <button type='submit'>Submit</button>
+                    <button className={styles.submit} type='submit'>Submit</button>
                 </form>
                 <a className={styles.haveAcc} href='/'><span>I already have an account</span></a>
             </div>
