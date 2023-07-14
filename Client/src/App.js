@@ -56,23 +56,14 @@ function App() {
       }
    }
 
-   const guest = () => {
-      dispatch(setUser('Guest'))
-      navigate(ROUTES.home)
-   }
-
-   const onSearch = async (id) => {
-      if (characters.every(character=>{
-         return character.id != id;
-      })) {
-         try {
-            const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
-            data.name && setCharacters((oldChars) => [...oldChars, data]);
-         } catch (err) {
-            window.alert(`There is no character with this ID! ID:${id}`);
+   const onSearch = async (keyword) => {
+      try {
+         const { data } = await axios(`http://localhost:3001/rickandmorty/character/?search=${keyword}`)
+         if (data.length) {
+            setCharacters(data);
          }
-      } else {
-         window.alert(`The character with this ID is already on screen! ID:${id}`);
+      } catch (err) {
+         window.alert(`Ooops no results found`);
       }
    }
 
@@ -92,7 +83,7 @@ function App() {
       <div className='App'>
          { (pathname !== ROUTES.landing && pathname !== ROUTES.signin) && <NavBar/> }
          <Routes>
-            <Route path={ROUTES.landing} element={<Landing login={login} guest={guest}/>}></Route>
+            <Route path={ROUTES.landing} element={<Landing login={login}/>}></Route>
             <Route path={ROUTES.signin} element={<SignIn signIn={signIn}/>}></Route>
             <Route path={ROUTES.home} element={<Home characters={characters} onSearch={onSearch} onClose={onClose} clearAll={clearAll}/>}></Route>
             <Route path={ROUTES.about} element={<About />}></Route>

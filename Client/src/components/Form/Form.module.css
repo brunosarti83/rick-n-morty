@@ -131,6 +131,14 @@ form input {
     color: white;
 }
 
+.by {
+    font-family: 'Fasthand', Tahoma;
+    color: whitesmoke;
+    align-self: end;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
 @media (orientation: portrait) {
     .formWrapper {
         background-position: 30% center;

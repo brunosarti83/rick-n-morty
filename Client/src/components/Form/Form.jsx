@@ -8,7 +8,7 @@ import { ROUTES } from '../../helpers/ROUTES';
 
 export default function Form(props) {
 
-    const { login, guest } = props
+    const { login } = props
     const navigate = useNavigate()
 
     const [userData, setUserData] = useState({
@@ -57,6 +57,7 @@ export default function Form(props) {
                         <button className={styles.signIn} onClick={goToSignIn}>Sign In</button>
                     </div>
                 </form>
+                <span className={styles.by}>by Bruno</span>
             </div>
         </div>
     )

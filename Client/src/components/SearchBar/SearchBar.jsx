@@ -15,19 +15,25 @@ export default function SearchBar(props) {
       setId('')
    }
 
+   const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+         onClick(id)
+      }
+   }
+
    const onRandom = () => {
       const id = Math.ceil(Math.random() * 826)
       onClick(id)
    }
 
-   const placeholder = '... insert character id from 1 to 826'
+   const placeholder = '... search character NAME or ID'
 
    return (
       <div className={styles.searchbar}>
          <div className={styles.barWrapper}>
             <div className={styles.bar}>
-               <input className={styles.inputSearch} type='search' onChange={handleChange} value={id} placeholder={placeholder} />
-               <button className={styles.searchButton} onClick={() => { onClick(id) }}>Add</button>
+               <input className={styles.inputSearch} type='search' onChange={handleChange} value={id} placeholder={placeholder} onKeyDown={handleKeyPress}/>
+               <button className={styles.searchButton} onClick={() => { onClick(id) }}><ion-icon name="arrow-redo"></ion-icon></button>
                <button className={styles.randomButton} onClick={onRandom}>Random</button>
                <span className={styles.clearAll} onClick={clearAll}>Clear All</span>
             </div>

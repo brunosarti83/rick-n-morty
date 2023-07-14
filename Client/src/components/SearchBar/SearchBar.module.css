@@ -42,6 +42,10 @@
     align-items: center;
 }
 
+.searchButton {
+    min-width: 45px;
+    font-size: 1.5rem;
+}
 
 .searchButton:hover {
     background-color: tomato;
