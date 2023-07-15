@@ -15,6 +15,7 @@ export default function Card(props) {
 
    // hooks
    const [isFav, setIsFav] = useState(false)
+   const [safari, setSafari] = useState(false)
    const dispatch = useDispatch()
    const location = useLocation()
    const myFavorites = useSelector((state) => (location.pathname === ROUTES.favorites) ? state.myFavorites : state.allCharacters)
@@ -28,6 +29,12 @@ export default function Card(props) {
       })
    }, [myFavorites])
 
+   useEffect(() => {
+      if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+         setSafari(true)         
+      }
+   },[])
+
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false)
@@ -37,6 +44,8 @@ export default function Card(props) {
          dispatch(addFav({ id, name, status, species, gender, origin, image, onClose, userId }))
       }
    }
+
+   
 
    return (
       <div className={styles.cardDiv}>
@@ -55,8 +64,8 @@ export default function Card(props) {
          <Link to={`/detail/${id}`} >
             <img className={styles.photo} src={image} alt='' />
          </Link>
-         <div className={styles.description}>
-            <h2 className={styles.characterName}>{name}</h2>
+         <div className={safari ? styles.descriptionSafari : styles.description}>
+            <h2 className={safari ? styles.characterNameSafari : styles.characterName}>{name}</h2>
             <h2 className={styles.status}>Status: {status}</h2>
             <h2 className={styles.species}>Species: {species}</h2>
             <h2 className={styles.gender}>Gender: {gender}</h2>
