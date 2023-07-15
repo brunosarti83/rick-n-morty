@@ -9,7 +9,7 @@ export const FILTER = 'FILTER'
 export const LOG_OUT = 'LOG_OUT'
 
 export const getFavs = (userId) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav/' + userId
+    const endpoint = '/fav/' + userId
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint)
@@ -24,7 +24,7 @@ export const getFavs = (userId) => {
 }
 
 export const addFav = (character) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav'
+    const endpoint = '/fav'
     return async (dispatch) => {
         try {
             const { data } = await axios.post(endpoint, character)
@@ -39,7 +39,7 @@ export const addFav = (character) => {
 } 
 
 export const removeFav = (id, userId) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id + '/' + userId
+    const endpoint = '/fav/' + id + '/' + userId
     return async (dispatch) => {
         try {
             const { data } = await axios.delete(endpoint)

@@ -30,7 +30,7 @@ function App() {
    }, [access])
 
    const signIn = async (userData) => {
-      const URL = 'http://localhost:3001/rickandmorty/login/'
+      const URL = '/login/'
       try {
          const { data } = await axios.post(URL,userData)
          login(userData)
@@ -41,7 +41,7 @@ function App() {
 
    const login = async (userData) => {
       const { email, password } = userData
-      const URL = 'http://localhost:3001/rickandmorty/login/'
+      const URL = '/login/'
       try {
          const { data } = await axios(URL + `?email=${email}&password=${password}`)
          const { access, user } = data
@@ -58,7 +58,7 @@ function App() {
 
    const onSearch = async (keyword) => {
       try {
-         const { data } = await axios(`http://localhost:3001/rickandmorty/character/?search=${keyword}`)
+         const { data } = await axios(`/character/?search=${keyword}`)
          if (data.length) {
             setCharacters(data);
          }
