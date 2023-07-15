@@ -29,6 +29,6 @@ server.use(morgan('dev'))
 server.use(express.json())
 
 // Middleware for router
-server.use('/rickandmorty', router)
+server.use('', router)
 
 module.exports = server;
