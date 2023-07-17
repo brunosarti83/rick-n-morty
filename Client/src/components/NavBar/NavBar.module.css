@@ -91,7 +91,7 @@
 
 .user {
     color:greenyellow;
-    font-family: Tahoma;
+    font-family: Tahoma, Verdana, sans-serif;
     text-transform: capitalize;
     font-weight: normal;
 }
