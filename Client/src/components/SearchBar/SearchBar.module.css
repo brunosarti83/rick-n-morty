@@ -10,6 +10,11 @@
     margin-top: 50px;
     position: relative;
     border-radius: 50px;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+button {
+    appearance: none;
 }
 
 
@@ -45,27 +50,39 @@
 .searchButton {
     min-width: 45px;
     font-size: 1.5rem;
+    border: none;
+    height: 40px;
+    text-align: center;
+    background: linear-gradient(32deg, rgb(27, 204, 44) 24%, rgba(0,250,4,1) 63%);
+    color: black;
+    transition: 0.2s;
 }
 
 .searchButton:hover {
-    background-color: tomato;
     cursor: pointer;
     box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
 }
 
 .randomButton {
     margin-left: 20px;
+    min-width: 70px;
+    font-size: 0.8rem;
+    border: none;
+    height: 40px;
+    text-align: center;
+    background: linear-gradient(32deg, rgb(27, 204, 44) 24%, rgba(0,250,4,1) 63%);
+    color: black;
+    transition: 0.2s;
 }
 
 .randomButton:hover {
-    background-color: tomato;
     cursor: pointer;
     box-shadow: -1px -2px 11px 3px rgba(0,0,0,0.75) inset;
 }
 
 .clearAll {
     position: absolute;
-    bottom: 10px;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
     color: greenyellow;

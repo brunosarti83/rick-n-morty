@@ -22,8 +22,12 @@
 
  .filters label {
     color: greenyellow;
-    font-family: Tahoma;
+    font-family: Tahoma, Verdana, sans-serif;
     font-style: italic;
+ }
+
+ .filters select {
+   color: black;
  }
 
  .orderLab {
