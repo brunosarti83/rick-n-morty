@@ -26,6 +26,9 @@ button {
     background-color: antiquewhite;
     color: black;
     border: 1px solid black;
+    height: 20px;
+    width: 22px;
+    text-align: center;
 }
 
 .clsBtn:hover {
