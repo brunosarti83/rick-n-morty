@@ -45,6 +45,7 @@ button {
     width: 100%;
     margin: auto;
     align-items: center;
+    border-radius: 0px;
 }
 
 .searchButton {
