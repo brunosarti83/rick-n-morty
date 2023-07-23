@@ -105,6 +105,7 @@ form input {
     font-style: italic;
     box-shadow: 2px 3px 0px 0px black;
     transition: 0.2s;
+    color: black;
 }
 
 .signIn:hover {

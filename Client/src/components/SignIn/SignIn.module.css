@@ -110,7 +110,7 @@ form div {
 .haveAcc {
     text-decoration: none;
     color: whitesmoke;
-    font-family: Tahoma;
+    font-family: Tahoma, Verdana, sans-serif;
     padding-bottom: 5dvh;
     position: relative;
     top: 2%;
